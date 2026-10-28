@@ -9,13 +9,12 @@
 
 > Documentación académica del desarrollo, las estructuras de datos y los algoritmos aplicados.
 
-| Información académica | Completar |
 |:---|:---|
 | Universidad | Universidad Privada Domingo Savio — Sede La Paz |
 | Carrera | **INGENIERIA EN SISTEMAS** |
 | Asignatura | Estructura de Datos |
 | Semestre | 5.º semestre |
-| Docente | Msc. Lic. Andrés Albino |
+| Docente | Msc. Lic. Andrés Grover Albino Chambi |
 | Estudiante | **Asaf Luis Carlos Roldan Machicado** |
 | Gestión y fecha de entrega | **28 de octubre de 2026** |
 | Repositorio | **https://github.com/asafnerdrm-coder/Proyecto_Final_Integrador_4.git** |
