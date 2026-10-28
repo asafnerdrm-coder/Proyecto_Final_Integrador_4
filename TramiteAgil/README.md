@@ -1,321 +1,125 @@
-<h1 align="center">🏛️ TRAMITEAGIL DDRR</h1>
-<p align="center"><strong>SISTEMA DE GESTIÓN DE TRÁMITES Y TURNOS</strong><br>
-<strong>DERECHOS REALES — LA PAZ, BOLIVIA</strong></p>
-<p align="center"><strong>PROYECTO FINAL INTEGRADOR | ESTRUCTURA DE DATOS</strong><br>
-Universidad Privada Domingo Savio — Sede La Paz</p>
+<div align="center">
 
----
+# 🏛️ TRAMITEAGIL DDRR
+### Sistema de Gestión de Trámites y Turnos — Derechos Reales, La Paz
 
-| **DATOS DE LA PRESENTACIÓN** | **INFORMACIÓN DEL ESTUDIANTE** |
+**PROYECTO FINAL INTEGRADOR · ESTRUCTURA DE DATOS**
+
+**Aplicación de consola en C# · .NET 8**
+
+> Documentación académica del desarrollo, las estructuras de datos y los algoritmos aplicados.
+
+| Información académica | Completar |
 |:---|:---|
-| **Estudiante** | Asaf Luis Carlos Roldan Machicado |
-| **Carrera** | Ingenieria En Sistemas |
-| **Asignatura** | Estructura de Datos |
-| **Semestre** | Quinto semestre |
-| **Docente** | Msc. Lic. Andrés Grover Albino Chambi |
-| **Sigla** | SIS-0130 |
-| **Lugar y fecha** | La Paz, Bolivia — 28 de octubre de 2026 |
-| **Repositorio GitHub** | https://github.com/asafnerdrm-coder/Proyecto_Final_Integrador_4.git |
-| **Video demostrativo** | [PEGAR ENLACE AL VIDEO] |
+| Universidad | Universidad Privada Domingo Savio — Sede La Paz |
+| Carrera | **INGENIERIA EN SISTEMAS** |
+| Asignatura | Estructura de Datos |
+| Semestre | 5.º semestre |
+| Docente | Msc. Lic. Andrés Albino |
+| Estudiante | **Asaf Luis Carlos Roldan Machicado** |
+| Gestión y fecha de entrega | **28 de octubre de 2026** |
+| Repositorio | **https://github.com/asafnerdrm-coder/Proyecto_Final_Integrador_4.git** |
 
-**Tecnologías:** `C#` · `.NET 8` · `Consola de Windows` · `Git/GitHub`  
-**ODS vinculado:** `ODS 16 — Paz, justicia e instituciones sólidas`
-
-> **Aviso:** TramiteAgil DDRR es una **simulación académica**. No pertenece al Consejo de la Magistratura, no realiza registros oficiales y no reemplaza la información, validación jurídica ni los sistemas de Derechos Reales.
+</div>
 
 ---
 
-## 📑 Índice
+## 📚 Índice
 
-1. [Presentación del proyecto](#1-presentación-del-proyecto)
-2. [Contexto de los trámites en Bolivia](#2-contexto-de-los-trámites-en-bolivia)
-3. [Problemática y demoras en Derechos Reales](#3-problemática-y-demoras-en-derechos-reales)
-4. [Justificación](#4-justificación)
-5. [Objetivos](#5-objetivos)
-6. [Alcance y limitaciones](#6-alcance-y-limitaciones)
-7. [Trámites modelados](#7-trámites-modelados)
-8. [Funcionamiento del sistema](#8-funcionamiento-del-sistema)
-9. [Estructuras de datos implementadas](#9-estructuras-de-datos-implementadas)
-10. [Grafos y algoritmos de recorrido](#10-grafos-y-algoritmos-de-recorrido)
-11. [Arquitectura y organización del código](#11-arquitectura-y-organización-del-código)
-12. [Instalación y ejecución](#12-instalación-y-ejecución)
-13. [Pruebas y validación](#13-pruebas-y-validación)
-14. [Complejidad de las operaciones](#14-complejidad-de-las-operaciones)
-15. [Aporte social y valor emprendedor](#15-aporte-social-y-valor-emprendedor)
-16. [Resultados esperados y mejoras futuras](#16-resultados-esperados-y-mejoras-futuras)
-17. [Conclusiones](#17-conclusiones)
-18. [Referencias y fuentes consultadas](#18-referencias-y-fuentes-consultadas)
-19. [Autoría y créditos](#19-autoría-y-créditos)
+1. [Presentación y propósito](#1-presentación-y-propósito)
+2. [Problema y contexto de Derechos Reales](#2-problema-y-contexto-de-derechos-reales)
+3. [Objetivos y resultados de aprendizaje](#3-objetivos-y-resultados-de-aprendizaje)
+4. [Tecnologías y organización del código](#4-tecnologías-y-organización-del-código)
+5. [Funcionamiento general del programa](#5-funcionamiento-general-del-programa)
+6. [CV1 — Arreglos y memoria dinámica](#6-cv1--arreglos-y-memoria-dinámica)
+7. [CV1 — Recursividad y árboles de requisitos](#7-cv1--recursividad-y-árboles-de-requisitos)
+8. [CV1 — Pila: historial LIFO](#8-cv1--pila-historial-lifo)
+9. [CV1 — Cola: atención FIFO](#9-cv1--cola-atención-fifo)
+10. [CV2 — Lista doblemente enlazada](#10-cv2--lista-doblemente-enlazada)
+11. [CV2 — Lista circular de ventanillas](#11-cv2--lista-circular-de-ventanillas)
+12. [CV3 — Grafo dirigido y algoritmos](#12-cv3--grafo-dirigido-y-algoritmos)
+13. [Integración entre las estructuras](#13-integración-entre-las-estructuras)
+14. [Trámites que modela el sistema](#14-trámites-que-modela-el-sistema)
+15. [Ejemplo completo de ejecución](#15-ejemplo-completo-de-ejecución)
+16. [Complejidad computacional](#16-complejidad-computacional)
+17. [Pruebas y evidencias](#17-pruebas-y-evidencias)
+18. [Instalación y ejecución desde CMD](#18-instalación-y-ejecución-desde-cmd)
+19. [Aporte a la asignatura y defensa oral](#19-aporte-a-la-asignatura-y-defensa-oral)
+20. [Alcance, limitaciones y mejoras futuras](#20-alcance-limitaciones-y-mejoras-futuras)
+21. [Conclusiones](#21-conclusiones)
+22. [Referencias y créditos](#22-referencias-y-créditos)
 
 ---
 
-## 1. Presentación del proyecto
+## 1. Presentación y propósito
 
-**TramiteAgil DDRR** es una aplicación de consola desarrollada en **C# con .NET 8** para simular el registro, la atención y el seguimiento de trámites relacionados con bienes inmuebles. Está inspirada en los procesos del Registro Público de Derechos Reales de La Paz, Bolivia.
+**TramiteAgil DDRR** es un proyecto académico ejecutable en la consola de Windows, desarrollado en **C# y .NET 8**, que simula la gestión de trámites vinculados con Derechos Reales de La Paz, Bolivia. Permite consultar un catálogo, registrar ciudadanos y solicitudes, verificar documentos, emitir turnos, atender en ventanillas y visualizar el avance del trámite.
 
-El sistema organiza los datos de las solicitudes, comprueba requisitos documentales, genera turnos, distribuye la atención entre ventanillas, permite recorrer etapas registrales y registra el historial de estados. También representa las rutas posibles de cada trámite mediante **grafos dirigidos**, incluidos los retornos por observaciones.
+Su finalidad principal en la materia no es sustituir un sistema institucional existente, sino **demostrar la aplicación práctica de las estructuras de datos**: cómo se representan en memoria, cómo se conectan sus nodos, cómo se recorren, qué operaciones ofrecen y por qué se escoge cada una.
 
-Su finalidad principal es **aplicar los contenidos de la asignatura Estructura de Datos a una situación cercana a la realidad**, evidenciando el comportamiento de arreglos, memoria dinámica, recursividad, pila, cola, lista doblemente enlazada, lista circular y grafo.
+**Alcance académico:** Los requisitos, trámites, pasos y tiempos contenidos en el programa son modelos didácticos. No constituyen un catálogo oficial actualizado ni garantizan plazos de atención. Derechos Reales pertenece al ámbito registral del Órgano Judicial; no es una unidad de la Alcaldía. Las gestiones notariales o municipales incluidas en el modelo de transferencia se identifican como **etapas externas**.
 
-**Público de referencia:** estudiantes, docentes y personas interesadas en comprender cómo un sistema informático puede modelar procedimientos documentales complejos.
+### Relación con los criterios de evaluación
 
-## 2. Contexto de los trámites en Bolivia
+| Criterio del proyecto | Peso indicado por el docente | Contenidos aplicados | Evidencia de código |
+|---|---:|---|---|
+| **CV1** | **25 %** | Arreglos, memoria dinámica, recursividad, pila y cola | `SistemaTramites`, `ValidadorRequisitos`, `Pila`, `Cola`, `Nodo` |
+| **CV2** | **35 %** | Lista doblemente enlazada y lista circular | `ListaDoble`, `ListaCircular`, `Solicitud` |
+| **CV3** | **40 %** | Grafo dirigido, lista de adyacencia, BFS, DFS y ciclos | `Grafo`, `ConstructorGrafo`, `Vista` |
 
-En Bolivia, el registro de derechos sobre inmuebles es una actividad de importancia jurídica y social: permite dar publicidad registral a actos y derechos relacionados con bienes inmuebles. El servicio de **Derechos Reales (DDRR)** forma parte del ámbito del **Órgano Judicial**, bajo el Consejo de la Magistratura; **no es una dependencia de la Alcaldía de La Paz**.
+> **Idea de defensa:** “Cada estructura se eligió por un comportamiento concreto: cola para orden de llegada; pila para último cambio; lista doble para avanzar o retroceder; lista circular para rotación; grafo para representar decisiones y caminos”.
 
-Los trámites relacionados con inmuebles pueden involucrar diferentes instituciones. Por ejemplo, una compraventa puede requerir actuaciones **municipales** (aspectos catastrales y tributarios), **notariales** (formalización documental) y finalmente **registrales** (presentación y calificación en Derechos Reales). Se trata de intervenciones distintas que el proyecto diferencia en sus etapas simuladas. La guía del Gobierno Autónomo Municipal de La Paz sobre registro de transferencias explica, entre otros aspectos, que el pago de un impuesto municipal no acredita por sí solo el derecho propietario.[^gam-lp]
+---
 
-El portal oficial del Consejo de la Magistratura distingue entre **inscripciones rápidas**, **trámites de inscripción en gabinete** y **servicios de ventanilla en línea**. Entre los servicios publicados se encuentran correcciones de datos, compraventa, inscripción de gravámenes, matriculación, certificados y Folio Real actualizado.[^catalogo-oficial]
+## 2. Problema y contexto de Derechos Reales
 
-### 2.1 Conceptos importantes
+Los procedimientos registrales relativos a inmuebles pueden involucrar requisitos documentales, verificaciones y varias etapas de revisión. Para una persona que realiza un trámite es importante saber **qué documentos debe presentar, qué etapa le corresponde y qué ocurre si la solicitud recibe una observación**.
 
-| Concepto | Explicación en el contexto del proyecto |
+El proyecto representa tres necesidades administrativas:
+
+1. **Organizar la recepción:** asignar turnos por orden de llegada y distribuir la atención entre ventanillas.
+2. **Controlar requisitos y pasos:** identificar documentos faltantes y modelar etapas vinculadas entre sí.
+3. **Permitir el seguimiento:** conocer el estado actual, conservar el historial y mostrar posibles devoluciones.
+
+La aplicación modela estos procedimientos de forma educativa. No mide demoras reales, no reduce por sí sola los tiempos de una oficina y no está conectada con bases de datos ni servicios oficiales. Su propuesta tecnológica es mostrar cómo podrían **estructurarse los datos y decisiones** de un flujo administrativo.
+
+---
+
+## 3. Objetivos y resultados de aprendizaje
+
+### Objetivo general
+
+Desarrollar una aplicación de consola en C# que simule la gestión de trámites registrales y permita **aplicar y defender** las estructuras de datos estudiadas durante la asignatura.
+
+### Objetivos específicos
+
+- Construir un **arreglo** con tipos de trámite, requisitos y pasos.
+- Crear **objetos y nodos dinámicamente** durante el funcionamiento de la aplicación.
+- Verificar **requisitos simples y compuestos mediante recursividad**.
+- Administrar el historial mediante una **pila LIFO** implementada con nodos.
+- Gestionar turnos por una **cola FIFO** implementada con nodos.
+- Recorrer etapas utilizando una **lista doblemente enlazada**.
+- Distribuir ventanillas mediante una **lista circular**.
+- Representar relaciones y devoluciones mediante un **grafo dirigido**, recorridos BFS, DFS y detección de ciclos.
+- Comprobar estructuras y comportamientos mediante pruebas automatizadas y manuales.
+
+### Qué se aprende al construirlo
+
+El proyecto permite contrastar estructuras lineales y no lineales, distinguir el orden FIFO/LIFO, trabajar con referencias, comprender los casos base recursivos, aplicar algoritmos de recorrido y analizar el costo de las operaciones.
+
+---
+
+## 4. Tecnologías y organización del código
+
+| Tecnología | Uso |
 |---|---|
-| **Derechos Reales** | Servicio registral que inscribe y publicita actos y derechos vinculados con inmuebles. |
-| **Folio Real** | Registro asociado a una matrícula que contiene información registral del inmueble, como titularidad y gravámenes. |
-| **Matrícula** | Identificador registral del inmueble. |
-| **Inscripción** | Asiento o registro de un acto o derecho conforme a los requisitos que correspondan. |
-| **Calificación registral** | Revisión registral previa a efectuar la inscripción solicitada. |
-| **Observación** | Incidencia que requiere aclarar o subsanar documentación o datos. |
-| **Subsanación** | Presentación de información o documentos para atender una observación. |
-| **Turno** | Identificador que determina el orden de atención en la simulación. |
-
-### 2.2 ¿Por qué los trámites pueden tener varios pasos?
-
-Una solicitud no siempre se resuelve en una sola ventanilla. Según su naturaleza, puede exigir revisión de identidad, documentos notariales, datos técnicos, antecedentes registrales o comprobantes administrativos. Si existe una inconsistencia, es posible que el interesado deba corregirla antes de continuar. **Estos son escenarios generales de análisis, no una descripción obligatoria de todos los expedientes reales**.
-
-## 3. Problemática y demoras en Derechos Reales
-
-La motivación del proyecto es la necesidad de contar con procesos **ordenados, comprensibles y trazables**. Cuando una persona desconoce los requisitos, el paso actual o el motivo de una observación, puede enfrentar visitas adicionales y pérdida de tiempo. Si además existen turnos numerosos o controles documentales sucesivos, la experiencia se vuelve más complicada.
-
-### 3.1 Evidencia contextual documentada
-
-- Una nota periodística publicada por **El Diario el 28 de abril de 2025** recogió declaraciones sobre la operación de Derechos Reales en La Paz, con una concurrencia estimada de **700 a 800 trámites diarios**, así como medidas para habilitar más ventanillas y evitar largas filas. **Es una cifra declarada en esa nota, no una medición propia del proyecto ni un promedio oficial actualizado**.[^eldiario]
-- **Correo del Sur, el 12 de febrero de 2025**, informó que el Consejo de la Magistratura había recibido denuncias en La Paz por errores en la inscripción de datos y **demoras en la entrega de certificaciones**, remitidas a instancias de investigación. La existencia de denuncias no permite cuantificar cuánto demora, en promedio, cada trámite.[^correodelsur]
-- La **Agencia Boliviana de Información**, el **10 de julio de 2026**, reportó una inspección de oficinas de Derechos Reales en La Paz y El Alto en la que se evaluaron, entre otros asuntos, tiempos de respuesta y manejo de archivos. Esto aporta contexto sobre la importancia del control y seguimiento de los servicios, pero no demuestra por sí solo retrasos generalizados.[^abi2026]
-
-### 3.2 ¿Cuánto demora un trámite?
-
-**No existe un plazo único aplicable a todos los trámites registrales.** El tiempo depende del servicio, su base normativa, la documentación presentada, la existencia de observaciones y las condiciones de atención. Para orientar la lectura se distinguen los siguientes casos:
-
-| Servicio o procedimiento | Referencia publicada | Interpretación correcta |
-|---|---|---|
-| **Folio Real actualizado** | El manual del Consejo de la Magistratura indica atención **inmediata** para el servicio descrito.[^folio] | Es un plazo publicado para ese servicio, no una garantía universal en cualquier circunstancia. |
-| **Certificado de no propiedad a nivel nacional** | La ficha del Consejo de la Magistratura señala **3 días hábiles**.[^cnp] | La versión académica emplea un certificado simplificado; no corresponde extrapolar el plazo a todas sus variantes. |
-| **Corrección de datos bajo el procedimiento de la Ley 247** | El art. 9 del **DS 4273** dispone la emisión del Folio Real corregido en un máximo de **3 días hábiles**, bajo los supuestos regulados.[^ds4273] | No significa que cualquier corrección de cualquier expediente de DDRR tenga siempre ese plazo. |
-
-> **Diferencia fundamental:** un **plazo normativo o publicado** no es lo mismo que una **medición del tiempo real de espera**. Este repositorio no cuenta con una base de datos oficial de expedientes ni pretende calcular la demora promedio de DDRR en La Paz. Los plazos incluidos en el catálogo del programa son **referenciales o simulados**, y no deben interpretarse como compromisos de la institución.
-
-### 3.3 Problemas que aborda el prototipo
-
-| Situación identificada | Respuesta del prototipo |
-|---|---|
-| Confusión sobre los requisitos | Catálogo y validación recursiva de documentos. |
-| Desorden en la asignación de turnos | Cola FIFO para atender según el orden de llegada. |
-| Asignación repetitiva de ventanillas | Lista circular para rotar tres ventanillas simuladas. |
-| Dificultad para conocer el estado | Seguimiento de la solicitud y del paso actual. |
-| Devoluciones por observaciones | Registro y subsanación de requisitos; transiciones representadas en un grafo. |
-| Falta de trazabilidad en la demostración | Pila de historial de cambios de estado. |
-
-## 4. Justificación
-
-**Justificación social.** El orden y la transparencia en los procedimientos documentales favorecen una mejor comprensión del servicio por parte de las personas. Una representación clara de los requisitos y las etapas puede ser útil para diseñar futuras herramientas de orientación ciudadana.
-
-**Justificación académica.** Los trámites de Derechos Reales ofrecen un escenario concreto para comparar estructuras de datos: la cola responde al orden de llegada, la pila al historial, las listas a los pasos y ventanillas, y el grafo a los caminos y decisiones.
-
-**Justificación tecnológica.** Una aplicación de consola permite observar cómo operan los algoritmos sin requerir una interfaz gráfica ni una base de datos. Esto facilita explicar las clases, los nodos, sus referencias y los costos de las operaciones.
-
-**Justificación emprendedora.** El sistema sirve como prueba de concepto para soluciones de orientación, turnos y seguimiento. **No se afirma que reduzca tiempos reales**, porque no se han efectuado mediciones de campo ni una implementación institucional.
-
-## 5. Objetivos
-
-### 5.1 Objetivo general
-
-Desarrollar una aplicación de consola en C# que simule la gestión de turnos, la validación de requisitos, el flujo de etapas y el seguimiento de solicitudes de trámites de Derechos Reales de La Paz, mediante el uso de estructuras de datos y algoritmos de recorrido.
-
-### 5.2 Objetivos específicos
-
-1. Definir un **catálogo de trámites** y sus requisitos mediante arreglos.
-2. Registrar dinámicamente ciudadanos, solicitudes y turnos durante la ejecución.
-3. Comprobar requisitos simples y compuestos mediante **recursividad**.
-4. Atender los turnos pendientes de acuerdo con una **cola FIFO**.
-5. Distribuir la atención en tres ventanillas mediante una **lista circular**.
-6. Modelar las etapas de cada solicitud con una **lista doblemente enlazada**.
-7. Registrar cambios de estado en una **pila LIFO**.
-8. Construir **grafos dirigidos** que representen avances, observaciones y posibles retornos, con BFS, DFS y detección de ciclos.
-9. Verificar los escenarios principales mediante pruebas automáticas y manuales.
-
-## 6. Alcance y limitaciones
-
-### 6.1 Qué incluye esta versión
-
-- Tres tipos de trámites académicos con diferentes cantidades de pasos.
-- Registro de solicitudes con información ingresada por teclado.
-- Comprobación de documentos presentados y pendientes.
-- Subsanación posterior de requisitos faltantes (opción 11).
-- Generación de turnos cuando se completan los requisitos de la simulación.
-- Atención FIFO y rotación de tres ventanillas.
-- Seguimiento de la etapa actual e historial de eventos.
-- Registro de observaciones y devoluciones en los pasos permitidos por el flujo.
-- Representación de grafos, recorridos BFS/DFS y detección de ciclos.
-- Modos de demostración y pruebas desde CMD.
-
-### 6.2 Qué NO incluye
-
-- Conexión con sistemas institucionales, padrones, archivos catastrales ni bases registrales reales.
-- Emisión de certificados o Folios Reales oficiales.
-- Firma digital, verificación jurídica, autenticación institucional ni pagos reales.
-- Almacenamiento permanente: **al cerrar la aplicación se pierden los registros creados en memoria**.
-- Estadísticas reales de tiempo de atención o garantía de reducción de demoras.
-- Un árbol binario de búsqueda independiente: existen **requisitos jerárquicos recorridos recursivamente**, que no deben confundirse con una implementación completa de un árbol de búsqueda.
-
-## 7. Trámites modelados
-
-Los ejemplos se basan en servicios registrales existentes, pero su **secuencia y requisitos se simplificaron** para permitir la demostración de las estructuras de datos.
-
-| Código | Trámite del catálogo | Cantidad de pasos | Finalidad simulada |
-|:---:|---|:---:|---|
-| `CNP` | Certificado de No Propiedad Urbana | 3 | Solicitar, revisar antecedentes y emitir una certificación simulada. |
-| `COR` | Corrección de datos en el Folio Real | 4 | Presentar respaldos, revisar, subinscribir la corrección y emitir un folio corregido simulado. |
-| `TRA` | Transferencia de inmueble e inscripción de Folio Real | 6 | Mostrar un recorrido integral que incluye gestiones externas y etapa registral. |
-
-**Aclaración:** El catálogo usa la denominación académica «Certificado de No Propiedad Urbana». No debe confundirse automáticamente con los certificados oficiales de ámbito nacional o departamental, que tienen fichas y requisitos propios.
-
-### 7.1 Trámite CNP — Certificado de no propiedad
-
-**Pasos:** presentación de solicitud → búsqueda/verificación registral → emisión y entrega.
-
-El caso representa una consulta documental que permite ilustrar un flujo corto. El catálogo solicita identificación, formulario y comprobante simulado. Para trámites reales, deben consultarse los requisitos oficiales y la modalidad correspondiente.[^cnp]
-
-### 7.2 Trámite COR — Corrección de datos del Folio Real
-
-**Pasos:** presentación de requisitos → revisión documental → subinscripción de escritura unilateral → emisión del Folio Real corregido.
-
-El ejemplo incorpora un **requisito compuesto**: la escritura pública unilateral de aclaración se modela mediante la minuta y su protocolización. Esta estructura permite demostrar la recursividad. El caso toma como referencia el procedimiento regulado por el DS 4273, sin afirmar que todos los casos se solucionen con los mismos documentos.[^ds4273]
-
-### 7.3 Trámite TRA — Transferencia e inscripción
-
-**Pasos:** verificar titularidad → gestión municipal del impuesto → protocolización notarial → presentación en DDRR → calificación registral → inscripción y entrega.
-
-Este caso es el más extenso y sirve para mostrar dependencias entre etapas. **Las actividades municipales y notariales se presentan como gestiones externas**, no como funciones realizadas por funcionarios de DDRR. La documentación exacta depende del tipo de transferencia y de la normativa aplicable.[^gam-lp][^inscripcion]
-
-## 8. Funcionamiento del sistema
-
-### 8.1 Flujo general de una solicitud
-
-```mermaid
-flowchart TD
-    A[Consultar el catálogo] --> B[Seleccionar trámite]
-    B --> C[Registrar ciudadano y solicitud]
-    C --> D[Validación recursiva de requisitos]
-    D --> E{¿Documentos completos?}
-    E -- No --> F[Registrar pendientes u observación]
-    F --> G[Subsanar documentos]
-    G --> D
-    E -- Sí --> H[Generar turno en cola FIFO]
-    H --> I[Atender y asignar ventanilla circular]
-    I --> J[Recorrer etapas mediante lista doble]
-    J --> K{¿Se observa el trámite?}
-    K -- Sí --> L[Devolver a etapa permitida por el grafo]
-    L --> J
-    K -- No --> M{¿Última etapa completada?}
-    M -- No --> J
-    M -- Sí --> N[Finalizar solicitud]
-    C -. cambios de estado .-> P[Historial en pila]
-    I -. cambios de estado .-> P
-    J -. cambios de estado .-> P
-    N -. cambios de estado .-> P
-```
-
-El diagrama es una **representación de alto nivel**; las opciones concretas dependen del estado de la solicitud y de las transiciones implementadas para cada trámite.
-
-### 8.2 Estados de la solicitud
-
-`Registrada → EnEspera → EnAtencion → EnProceso → Finalizada`
-
-Según el caso, puede existir también el estado `Observada`, con un proceso de subsanación y retorno. Los cambios se reflejan en el historial correspondiente.
-
-### 8.3 Menú de consola
-
-```text
---------------------------- MENÚ ---------------------------
- 1. Ver catálogo de trámites (arreglo)
- 2. Nueva solicitud + validar requisitos + generar turno
- 3. Atender siguiente turno (cola + ventanillas circulares)
- 4. Avanzar un paso del trámite (lista doble)
- 5. Observar trámite / retroceder un paso (lista doble)
- 6. Seguimiento de una solicitud
- 7. Historial de estados (pila) y deshacer
- 8. Ver grafo de flujo de un trámite
- 9. Ver cola de turnos y ventanillas
-10. Demostración automática completa
-11. Presentar documentos pendientes / subsanar
- 0. Salir
-------------------------------------------------------------
-```
-
-## 9. Estructuras de datos implementadas
-
-| Estructura | Implementación y ubicación | Función dentro del proyecto |
-|---|---|---|
-| **Arreglo** | `TipoTramite[]`, arreglos de `Requisito[]` y `Paso[]` | Guardar catálogo y elementos de cada trámite. |
-| **Memoria dinámica** | Creación de `Solicitud`, `Turno`, `Nodo<T>` | Instanciar elementos según las acciones del usuario. |
-| **Recursividad** | `ValidadorRequisitos` | Validar requisitos y subrequisitos de forma jerárquica. |
-| **Pila** | `Estructuras/Pila.cs` | Historial LIFO; apoyar algoritmos del grafo. |
-| **Cola** | `Estructuras/Cola.cs` | Atender turnos FIFO; apoyar BFS. |
-| **Lista doble** | `Estructuras/ListaDoble.cs` | Moverse entre etapas anteriores y siguientes. |
-| **Lista circular** | `Estructuras/ListaCircular.cs` | Rotar las ventanillas 1 → 2 → 3 → 1. |
-| **Grafo dirigido** | `Estructuras/Grafo.cs` | Modelar caminos, decisiones y observaciones. |
-
-### 9.1 Pila: principio LIFO
-
-**Último en entrar, primero en salir.** Cada solicitud registra cambios de estado en una pila. Esto facilita consultar eventos recientes y, en los casos admitidos por el programa, deshacer una transición sin deshacer la atención que ya ocurrió.
-
-### 9.2 Cola: principio FIFO
-
-**Primero en entrar, primero en salir.** Los turnos ingresan por el final y se atienden desde el frente. La implementación dispone de referencias al inicio y al final para mantener operaciones de encolado y desencolado de costo constante.
-
-### 9.3 Lista doblemente enlazada
-
-Cada nodo contiene referencias al **anterior** y al **siguiente**. El cursor representa la etapa en la que se encuentra la solicitud. A diferencia de una lista simple, permite navegar en ambos sentidos.
-
-### 9.4 Lista circular
-
-El último nodo vuelve a conectarse con el primero. Se utiliza para rotar tres ventanillas simuladas. Esta distribución **no mide la carga de trabajo real** ni predice la disponibilidad de cada puesto.
-
-### 9.5 Recursividad y jerarquía de requisitos
-
-Un requisito puede ser simple (un documento) o compuesto (varios subdocumentos). La validación comprueba recursivamente cada elemento y se detiene cuando llega a una hoja o se agotan los requisitos. La jerarquía funciona como un **árbol conceptual de requisitos**, aunque el trabajo no implementa un árbol binario de búsqueda como estructura independiente.
-
-## 10. Grafos y algoritmos de recorrido
-
-En el sistema, un **vértice** representa una etapa registral y una **arista dirigida** representa una transición permitida. Las aristas pueden significar **continuar** o **devolver por observación**.
-
-El grafo se almacena mediante una **lista de adyacencia construida con enlaces**. Esto permite recorrer los destinos asociados a cada vértice.
-
-```mermaid
-flowchart LR
-    P1["P1 · Titularidad"] --> P2["P2 · Impuesto municipal"]
-    P2 --> P3["P3 · Notaría"]
-    P3 --> P4["P4 · Presentación DDRR"]
-    P4 --> P5["P5 · Calificación"]
-    P5 --> P6["P6 · Inscripción"]
-    P6 --> FIN["FINALIZADO"]
-    P5 -- "Observación" --> P4
-    P5 -- "Observación" --> P3
-```
-
-*Ejemplo tomado del flujo académico TRA. El grafo incluye un ciclo porque algunas observaciones pueden devolver la solicitud a etapas anteriores.*
-
-| Algoritmo | Funcionamiento | Aplicación en el sistema |
-|---|---|---|
-| **BFS (búsqueda en anchura)** | Recorre por niveles usando una cola. | Encontrar una ruta con menos transiciones entre nodos. |
-| **DFS (búsqueda en profundidad)** | Explora un camino antes de retroceder, con pila. | Obtener un recorrido de los vértices del grafo. |
-| **Detección de ciclos** | DFS recursivo con estados de visita. | Identificar retornos por observaciones. |
-
-**Importante:** `RutaMasCorta` busca el menor **número de aristas**, no el menor tiempo de atención ni la ruta más rápida en días. En esta versión no se calculan tiempos reales ni se optimizan recursos institucionales.
-
-## 11. Arquitectura y organización del código
+| **C#** | Clases, objetos, genéricos (`<T>`), condicionales, ciclos y algoritmos |
+| **.NET 8** | Compilación y ejecución de la aplicación |
+| **Consola / CMD** | Interacción por teclado y presentación de resultados en texto |
+| **Visual Studio o VS Code** | Escritura y revisión del código |
+| **Git y GitHub** | Control de versiones y publicación del README y código fuente |
+
+### Estructura real de carpetas
 
 ```text
 TramiteAgil/
@@ -339,204 +143,925 @@ TramiteAgil/
 │   ├── Program.cs
 │   ├── Menu.cs
 │   ├── Vista.cs
-│   ├── Pruebas.cs
-│   └── Demo.cs
+│   ├── Demo.cs
+│   └── Pruebas.cs
 └── docs/
     ├── INFORME_TECNICO.md
     └── GUION_VIDEO.md
 ```
 
-**Capas principales:**
+> Este README reemplaza o complementa el README del repositorio; los demás archivos se muestran según el proyecto `TramiteAgil_DDRR_Mejorado.zip` analizado. El código ejecutable se encuentra en `TramiteAgil.csproj` y las clases C# que aparecen en las carpetas anteriores.
 
-- **Estructuras:** implementaciones de nodos y algoritmos.
-- **Modelos:** clases que representan ciudadanos, trámites, requisitos, pasos, solicitudes y turnos.
-- **Servicios:** reglas de negocio, validación documental y construcción de grafos.
-- **Interfaz:** comunicación con el usuario mediante menú, salidas de consola, demostraciones y pruebas.
+### Mapa directo: ¿dónde está cada tema de la asignatura?
 
-> La estructura corresponde al proyecto de código revisado. Si cambias los nombres o mueves archivos antes de subirlos a GitHub, actualiza este árbol.
+| Tema estudiado | Archivo para abrir en GitHub | Método o clase que debes señalar |
+|---|---|---|
+| Arreglos | [`CatalogoDerechosReales.cs`](Servicios/CatalogoDerechosReales.cs) | `Crear()` y `TipoTramite[]` |
+| Memoria dinámica | [`Nodo.cs`](Estructuras/Nodo.cs) | `Nodo<T>` y llamadas a `new` |
+| Recursividad / requisitos jerárquicos | [`ValidadorRequisitos.cs`](Servicios/ValidadorRequisitos.cs) | `Validar`, `ValidarLista`, `Arbol` |
+| Pila | [`Pila.cs`](Estructuras/Pila.cs) | `Push`, `Pop`, `Peek` |
+| Cola | [`Cola.cs`](Estructuras/Cola.cs) | `Encolar`, `Desencolar`, `Frente` |
+| Lista doble | [`ListaDoble.cs`](Estructuras/ListaDoble.cs) | `MoverSiguiente`, `MoverAnterior` |
+| Lista circular | [`ListaCircular.cs`](Estructuras/ListaCircular.cs) | `Rotar`, `UnaVuelta` |
+| Grafo, BFS, DFS, ciclos | [`Grafo.cs`](Estructuras/Grafo.cs) | `RutaMasCorta`, `RecorridoDFS`, `TieneCiclos` |
+| Flujo de una solicitud | [`Modelos.cs`](Modelos/Modelos.cs) | `Solicitud.Avanzar`, `Retroceder`, `Deshacer` |
+| Turnos y ventanillas | [`SistemaTramites.cs`](Servicios/SistemaTramites.cs) | `GenerarTurno`, `AtenderSiguiente` |
+| Menú de consola | [`Menu.cs`](Interfaz/Menu.cs) | `Ejecutar` y opciones `1` a `11` |
+| Pruebas automáticas | [`Pruebas.cs`](Interfaz/Pruebas.cs) | `Ejecutar()` |
 
-## 12. Instalación y ejecución
+> Los enlaces son **relativos al archivo `README.md`**, por lo que funcionarán al colocar este documento dentro de la carpeta del proyecto que contiene `Estructuras/`, `Modelos/`, `Servicios/` e `Interfaz/`.
 
-### Requisitos previos
+### Responsabilidad de cada carpeta
 
-- Windows con CMD o PowerShell; también puede ejecutarse en otras plataformas con .NET compatible.
-- **SDK de .NET 8** instalado (el proyecto usa `net8.0`).
-- Visual Studio o Visual Studio Code, opcionales para editar.
-- Git, si se desea publicar mediante terminal.
+**`Estructuras/`** contiene las implementaciones de nodos, pila, cola, listas y grafo. No son simples explicaciones: estas clases se utilizan en el funcionamiento del sistema.
 
-Verificar la instalación:
+**`Modelos/`** define los conceptos del dominio: `Ciudadano`, `TipoTramite`, `Requisito`, `Paso`, `Solicitud`, `Turno`, `Ventanilla`, `EntradaHistorial` y los estados de una solicitud.
+
+**`Servicios/`** coordina el catálogo, las solicitudes y turnos, la validación recursiva y la construcción de grafos.
+
+**`Interfaz/`** permite ingresar datos desde el teclado, mostrar resultados y ejecutar pruebas y demostraciones desde CMD.
+
+### Diagrama general de responsabilidades
+
+```mermaid
+flowchart TD
+    A[Program.cs] --> B[Menu.cs]
+    B --> C[SistemaTramites.cs]
+    B --> D[Vista.cs]
+    C --> E[CatalogoDerechosReales.cs]
+    C --> F[Modelos.cs]
+    C --> G[Cola y ListaCircular]
+    F --> H[ListaDoble y Pila]
+    B --> I[ValidadorRequisitos.cs]
+    F --> J[ConstructorGrafo.cs]
+    J --> K[Grafo.cs]
+```
+
+---
+
+## 5. Funcionamiento general del programa
+
+Al iniciarse, `Program.Main` establece la codificación de consola, crea un objeto `SistemaTramites` y abre `Menu.Ejecutar()`. Existen además dos modos especiales: `--test` y `--demo`.
+
+### Opciones reales del menú
+
+| Opción | Operación | Concepto principalmente demostrado |
+|---:|---|---|
+| **1** | Ver catálogo de trámites | Arreglos y requisitos jerárquicos |
+| **2** | Nueva solicitud, validar documentos y generar turno si corresponde | Objetos, recursividad y cola |
+| **3** | Atender siguiente turno | Cola FIFO y lista circular |
+| **4** | Avanzar un paso | Lista doblemente enlazada |
+| **5** | Observar trámite / retroceder | Grafo de devoluciones y lista doble |
+| **6** | Consultar seguimiento | Estado y recorrido de pasos |
+| **7** | Ver historial y opción de deshacer | Pila LIFO |
+| **8** | Mostrar grafo del trámite | Grafo, BFS, DFS y ciclos |
+| **9** | Ver cola y ventanillas | Cola y rotación circular |
+| **10** | Ejecutar demostración automática | Integración de estructuras |
+| **11** | Presentar documentos pendientes / subsanar | Recursividad y gestión de requisitos |
+| **0** | Salir | Finaliza el programa |
+
+### Flujo de una solicitud
+
+```mermaid
+flowchart TD
+    A[Seleccionar trámite del arreglo] --> B[Ingresar datos del ciudadano]
+    B --> C[Crear solicitud y nodos]
+    C --> D{¿Cumple los requisitos?}
+    D -- No --> E[Registrar documentos pendientes]
+    E --> F[Opción 11: presentar documentos]
+    F --> D
+    D -- Sí --> G[Generar turno y encolar]
+    G --> H[Atender por orden FIFO]
+    H --> I[Asignar ventanilla circular]
+    I --> J[Avanzar entre pasos]
+    J --> K{¿Hay observación permitida?}
+    K -- Sí --> L[Registrar observación y regresar]
+    L --> J
+    K -- No --> M[Completar pasos]
+    M --> N[Finalizar solicitud]
+```
+
+> El diagrama resume el flujo conceptual. En esta versión, la observación **por requisitos faltantes** se resuelve con la opción 11; las observaciones de **revisión de pasos** se registran por la opción 5 y siguen una lógica distinta. No deben confundirse ambos casos.
+
+---
+
+## 6. CV1 — Arreglos y memoria dinámica
+
+### 6.1 Arreglos: guardar tipos de trámite
+
+**Definición:** un arreglo reúne elementos de un mismo tipo y permite acceder a ellos mediante un índice.
+
+**Dónde se implementó:**
+
+- `Servicios/CatalogoDerechosReales.cs`, método `Crear()`.
+- `Servicios/SistemaTramites.cs`, propiedad `TipoTramite[] Catalogo`.
+- `Modelos/Modelos.cs`, propiedades `Requisito[] Requisitos`, `Paso[] Pasos` y `int[] VuelveA`.
+
+Fragmento representativo del catálogo real:
+
+```csharp
+return new TipoTramite[] { certificado, correccion, transferencia };
+```
+
+El catálogo contiene **tres elementos** (`CNP`, `COR`, `TRA`). Cada tipo almacena arreglos de requisitos y pasos, de longitudes diferentes.
+
+**Por qué un arreglo:** el proyecto parte de un catálogo predeterminado y conocido. La elección permite acceder a una opción por índice y recorrer fácilmente los tipos. Agregar nuevos trámites desde el menú **no está implementado**.
+
+**Ejemplo de defensa:** “Usé arreglos porque el sistema requiere un catálogo definido de trámites. Cada posición contiene un objeto con requisitos y etapas”.
+
+### 6.2 Memoria dinámica: crear objetos cuando se necesitan
+
+**Definición:** durante la ejecución se reservan objetos en memoria mediante `new`. Las referencias permiten vincularlos y, en C#, su ciclo de vida es administrado por el recolector de basura.
+
+**Dónde se implementó:**
+
+- `Estructuras/Nodo.cs`, constructor `Nodo<T>(dato)`.
+- `Servicios/SistemaTramites.cs`, método `RegistrarSolicitud`.
+- `Estructuras/Cola.cs`, `Pila.cs`, `ListaDoble.cs` y `ListaCircular.cs`, que crean nodos al agregar datos.
+
+Fragmento real de la clase `Nodo<T>`:
+
+```csharp
+public class Nodo<T>
+{
+    public T Dato;
+    public Nodo<T> Siguiente;
+    public Nodo<T> Anterior;
+
+    public Nodo(T dato)
+    {
+        Dato = dato;
+    }
+}
+```
+
+`<T>` significa que **el mismo nodo genérico** puede almacenar diferentes tipos: `Turno`, `Paso`, `EntradaHistorial`, números o cadenas, según la estructura donde se use. `Anterior` se aprovecha en la lista doble; `Siguiente` se usa en las estructuras enlazadas.
+
+**Ejemplo real:** cada ciudadano registrado produce un nuevo objeto `Solicitud`. En el constructor de la solicitud se crean nodos para sus pasos y entradas para su historial.
+
+**Cómo defenderlo:** “No creé una variable fija para cada ciudadano. Cada solicitud se instancia al registrarla y cada estructura enlazada crea sus nodos cuando los necesita”.
+
+---
+
+## 7. CV1 — Recursividad y árboles de requisitos
+
+### 7.1 Qué es recursividad
+
+Una función es **recursiva** cuando se llama a sí misma. Para funcionar correctamente debe existir una condición de salida o **caso base**.
+
+**Dónde se implementó:** `Servicios/ValidadorRequisitos.cs`:
+
+- `Validar(Requisito req, ...)`: comprueba requisitos simples y compuestos.
+- `ValidarLista(Requisito[] reqs, int indice, ...)`: recorre recursivamente el arreglo.
+- `ListarHojas(...)`: obtiene documentos concretos desde requisitos compuestos.
+- `Arbol(...)`: imprime los requisitos anidados con sangría.
+
+### 7.2 Caso base y caso recursivo
+
+Fragmento del método real `Validar`:
+
+```csharp
+if (req.EsHoja) // caso base
+{
+    bool cumple = presentados.Contains(req.Nombre);
+    if (!cumple) faltantes.Add(req.Nombre);
+    return cumple;
+}
+
+bool todos = true;
+foreach (Requisito sub in req.Sub)
+{
+    if (!Validar(sub, presentados, faltantes)) todos = false;
+}
+return todos;
+```
+
+**Caso base:** el requisito es una hoja, es decir, un documento individual. Se comprueba si está entre los documentos presentados.
+
+**Caso recursivo:** el requisito tiene subrequisitos. La función se vuelve a ejecutar para cada uno. El requisito compuesto se considera completo **solamente si se cumplen todos sus componentes**.
+
+### 7.3 ¿Dónde aparece un árbol?
+
+La clase `Requisito` forma una **jerarquía de padres e hijos** mediante `Requisito[] Sub`. Esta jerarquía puede representarse como un **árbol de requisitos**. No es un árbol binario ni un AVL de búsqueda; no existen inserción ordenada, rotaciones ni balanceo AVL en este proyecto.
+
+Ejemplo real del trámite de transferencia:
+
+```text
+Cédulas de identidad de las partes
+├── Cédula del vendedor
+└── Cédula del comprador
+
+Minuta de compraventa
+├── Minuta firmada por las partes
+└── Protocolización ante Notario
+```
+
+Los nodos con hijos son requisitos **compuestos**; los nodos sin hijos son **hojas**. El método `Arbol` los muestra con sangría y `ListarHojas` extrae las hojas que el usuario puede marcar como presentadas.
+
+**Pregunta posible:** “¿Implementaste árboles?”
+
+**Respuesta precisa:** “Sí utilizo una representación jerárquica tipo árbol para los requisitos compuestos y la recorro recursivamente. Sin embargo, no implementé un árbol AVL ni un árbol binario de búsqueda”.
+
+### 7.4 Qué ocurre cuando falta un documento
+
+Si el ciudadano no presenta una hoja, el método añade su nombre a `faltantes`. Durante la opción 2 del menú, la solicitud queda registrada con documentación pendiente y sin turno; desde la opción 11 se pueden registrar nuevos documentos y ejecutar nuevamente la verificación.
+
+**Ejemplo de defensa:** “La recursividad evita escribir un bloque diferente para cada trámite. El mismo algoritmo valida cualquier jerarquía de requisitos, sin importar cuántos niveles tenga”.
+
+---
+
+## 8. CV1 — Pila: historial LIFO
+
+**Definición:** una pila trabaja bajo el principio **LIFO**, *Last In, First Out*: el último elemento insertado es el primero que se retira.
+
+**Dónde se implementó:** `Estructuras/Pila.cs` — clase `Pila<T>`.
+
+**Dónde se utiliza:** `Modelos/Modelos.cs` — propiedad de `Solicitud`:
+
+```csharp
+public Pila<EntradaHistorial> Historial { get; }
+    = new Pila<EntradaHistorial>();
+```
+
+### Operaciones construidas manualmente
+
+| Operación | Método en C# | Qué hace |
+|---|---|---|
+| Apilar | `Push(T dato)` | Crea un nodo y lo coloca en el tope |
+| Desapilar | `Pop()` | Retira y devuelve el tope |
+| Consultar cima | `Peek()` | Lee el tope sin retirarlo |
+| Consultar anterior | `PeekSegundo()` | Lee el elemento bajo el tope |
+| Recorrer | `DesdeElTope()` | Muestra el historial del más nuevo al más antiguo |
+
+Fragmento real:
+
+```csharp
+public void Push(T dato)
+{
+    var nuevo = new Nodo<T>(dato);
+    nuevo.Siguiente = _tope;
+    _tope = nuevo;
+    Cantidad++;
+}
+```
+
+### Aplicación al trámite
+
+```text
+        TOPE DE PILA
+     ┌────────────────┐
+     │ EnProceso      │  ← cambio más reciente
+     ├────────────────┤
+     │ EnAtencion     │
+     ├────────────────┤
+     │ EnEspera       │
+     ├────────────────┤
+     │ Registrada     │  ← cambio más antiguo
+     └────────────────┘
+```
+
+Cada llamada a `Solicitud.CambiarEstado(...)` registra una entrada con **estado, posición del paso, detalle y fecha**. En la opción **7** se muestran estas entradas y existe la posibilidad de deshacer una transición con `Pop()`, sujeto a restricciones.
+
+**Importante:** “deshacer” no significa borrar realmente una atención ya realizada. El código impide retroceder más allá de ciertos estados para conservar la coherencia del proceso.
+
+**Uso adicional:** el grafo utiliza también una `Pila<int>` para reconstruir una ruta BFS en orden y para recorrer nodos mediante DFS iterativo.
+
+**Cómo defenderlo:** “Elegí una pila porque el historial necesita consultar primero la última transición. Además, un `Pop` me permite restaurar un estado anterior cuando está permitido”.
+
+---
+
+## 9. CV1 — Cola: atención FIFO
+
+**Definición:** una cola trabaja bajo el principio **FIFO**, *First In, First Out*: el primero en entrar es el primero en salir.
+
+**Dónde se implementó:** `Estructuras/Cola.cs` — `Cola<T>`.
+
+**Dónde se utiliza:** `Servicios/SistemaTramites.cs`:
+
+```csharp
+public Cola<Turno> ColaTurnos { get; }
+    = new Cola<Turno>();
+```
+
+### Operaciones principales
+
+- `Encolar(T dato)`: añade un turno al final.
+- `Desencolar()`: retira el turno del frente.
+- `Frente()`: consulta el siguiente turno sin retirarlo.
+- `Elementos()`: muestra la fila sin modificar su orden.
+
+```text
+LLEGADA                  ATENCIÓN
+  T-003 → T-002 → T-001 → [VENTANILLA]
+                  primero en salir
+```
+
+`Cola<T>` mantiene referencias `_frente` y `_final`. Por eso **encolar y desencolar cuestan O(1)**: no necesita recorrer todos los turnos para agregar o retirar uno.
+
+### Uso en el sistema
+
+El método `SistemaTramites.GenerarTurno(...)` crea un turno y llama a `ColaTurnos.Encolar(turno)`. El método `AtenderSiguiente(...)` llama a `Desencolar()` y utiliza la solicitud asociada al turno.
+
+**Uso adicional:** la búsqueda BFS del grafo utiliza una `Cola<int>` para recorrer vértices por niveles.
+
+**Cómo defenderlo:** “La cola garantiza la atención por llegada. Si se generan T-001, T-002 y T-003, se atienden en ese mismo orden”.
+
+---
+
+## 10. CV2 — Lista doblemente enlazada
+
+**Definición:** una lista doblemente enlazada conecta cada nodo con su **siguiente** y su **anterior**. Así puede recorrerse hacia ambos lados.
+
+**Dónde se implementó:** `Estructuras/ListaDoble.cs` — `ListaDoble<T>` y `Nodo<T>`.
+
+**Dónde se utiliza:** `Modelos/Modelos.cs` — propiedad `Solicitud.Flujo`.
+
+```csharp
+public ListaDoble<Paso> Flujo { get; }
+    = new ListaDoble<Paso>();
+```
+
+### Referencias utilizadas
+
+- `_cabeza`: primer nodo.
+- `_cola`: último nodo.
+- `_actual`: cursor situado en el paso actual.
+- `Siguiente` y `Anterior`: enlaces entre nodos.
+
+```text
+    [P1 Recepción] ⇄ [P2 Revisión] ⇄ [P3 Entrega]
+                            ↑
+                    cursor en el paso 2
+```
+
+### Métodos importantes
+
+| Método | Función |
+|---|---|
+| `AgregarAlFinal` | Inserta un nuevo paso al final |
+| `MoverSiguiente` | Avanza el cursor si existe otro nodo |
+| `MoverAnterior` | Retrocede el cursor si existe un nodo previo |
+| `IrAlInicio` | Devuelve el cursor al primer paso |
+| `IrA(posicion)` | Busca y posiciona el cursor en una etapa |
+| `Elementos` | Recorre la lista sin desplazar el cursor |
+
+### Cómo interactúa con la solicitud
+
+En el constructor de `Solicitud`, cada paso del arreglo se agrega a `Flujo`. Al atender un turno, `SistemaTramites.AtenderSiguiente(...)` mueve el cursor al paso 2. La opción **4** invoca `Solicitud.Avanzar(...)`, que mueve el cursor al siguiente paso; la opción **5** puede llevarlo a un destino anterior autorizado por el grafo.
+
+> **Diferencia clave:** la lista doble almacena el **orden principal de las etapas**; el grafo almacena las **transiciones posibles**, incluidas las devoluciones. Son estructuras complementarias y no equivalentes.
+
+**Cómo defenderlo:** “La lista doble permite recorrer las etapas sin reconstruir una lista nueva. Sus referencias hacen posible cambiar al paso anterior o siguiente a partir del cursor”.
+
+---
+
+## 11. CV2 — Lista circular de ventanillas
+
+**Definición:** una lista circular conecta el **último nodo nuevamente con el primero**. En el proyecto se implementó como lista simplemente enlazada circular.
+
+**Dónde se implementó:** `Estructuras/ListaCircular.cs` — clase `ListaCircular<T>`.
+
+**Dónde se utiliza:** `SistemaTramites.Ventanillas`, con tres objetos `Ventanilla`.
+
+```text
+    Ventanilla 1 → Ventanilla 2 → Ventanilla 3
+          ↑                             │
+          └─────────────────────────────┘
+```
+
+El código conserva una referencia `_ultimo`; su enlace `Siguiente` apunta al primer nodo, cerrando el anillo. La referencia `_actual` indica la próxima ventanilla que se asignará.
+
+### Método principal: `Rotar()`
+
+```csharp
+public T Rotar()
+{
+    if (_actual == null)
+        throw new InvalidOperationException("La lista circular está vacía.");
+    T dato = _actual.Dato;
+    _actual = _actual.Siguiente;
+    return dato;
+}
+```
+
+### Ejemplo de asignación
+
+| Turno atendido | Ventanilla asignada |
+|---|---|
+| T-001 | 1 |
+| T-002 | 2 |
+| T-003 | 3 |
+| T-004 | 1 |
+| T-005 | 2 |
+
+El método `AtenderSiguiente(...)` obtiene la ventanilla por `Ventanillas.Rotar()` y aumenta su contador `Atendidos`.
+
+**Qué debes aclarar:** la distribución es de tipo **round-robin** (rotación secuencial). No calcula si una ventanilla se encuentra libre, no mide duración de atención ni optimiza automáticamente cargas de trabajo.
+
+**Cómo defenderlo:** “La lista circular representa una rotación continua: cuando termina la lista no aparece `null`, sino que vuelve al primer nodo”.
+
+---
+
+## 12. CV3 — Grafo dirigido y algoritmos
+
+El **grafo** es la estructura central para representar relaciones no estrictamente lineales entre etapas.
+
+**Dónde se implementó:**
+
+- `Estructuras/Grafo.cs`: `Grafo` y `Arista`.
+- `Servicios/ConstructorGrafo.cs`: `ConstructorGrafo.Crear(tipo)`.
+- `Modelos/Modelos.cs`: `Paso.EsRevision`, `Paso.VuelveA` y `Solicitud.Retroceder`.
+- `Interfaz/Vista.cs`: `GrafoTramite(...)` para visualizar las conexiones, BFS, DFS y ciclos.
+
+### 12.1 Vértices y aristas
+
+- Un **vértice** representa una etapa (`P1`, `P2`, etc.) o el nodo `FINALIZADO`.
+- Una **arista dirigida** representa una transición autorizada: avanzar o regresar por una observación.
+- Cada arista almacena `Destino`, `Etiqueta` y `Siguiente`.
+
+La clase `Grafo` no depende de `Dictionary` para su representación principal: utiliza **un arreglo de cabeceras `Arista[] _adyacencia`**, donde cada posición apunta a una lista enlazada de aristas salientes.
+
+**Ejemplo conceptual del trámite de corrección:**
+
+```mermaid
+flowchart LR
+    P1["P1 Recepción"] --> P2["P2 Revisión documental"]
+    P2 --> P3["P3 Subinscripción"]
+    P3 --> P4["P4 Folio Real corregido"]
+    P4 --> F["FINALIZADO"]
+    P2 -- "Observado: subsanar" --> P1
+```
+
+En el trámite de transferencia, la revisión de la etapa 5 incluye devoluciones configuradas hacia las etapas 4 y 3. **El método actual `Solicitud.Retroceder` toma la primera arista etiquetada como observación; no ofrece todavía un menú para elegir entre varios destinos.**
+
+### 12.2 Lista de adyacencia
+
+Ejemplo simplificado de lo que almacena el grafo:
+
+```text
+P1 → P2
+P2 → P3, P1 (observación)
+P3 → P4
+P4 → FINALIZADO
+FINALIZADO → (sin salidas)
+```
+
+En código, `AgregarArista(origen, destino, etiqueta)` inserta un objeto `Arista` al final de la lista enlazada correspondiente al nodo de origen.
+
+### 12.3 BFS: búsqueda en anchura
+
+**BFS** explora los vértices más próximos al origen antes de avanzar a niveles posteriores.
+
+Método real: `Grafo.RutaMasCorta(int origen, int destino)`.
+
+**Algoritmo implementado:**
+
+1. Inicializa un arreglo `padre` con marcas de no visitado.
+2. Inserta el nodo de origen en una `Cola<int>`.
+3. Retira el siguiente nodo y agrega sus vecinos no visitados.
+4. Al hallar el destino, reconstruye el camino mediante una `Pila<int>`.
+5. Devuelve un arreglo con la ruta desde el origen hasta el destino.
+
+**Qué significa “más corta”:** menor **número de aristas o transiciones**, no menor cantidad de días o costo. El grafo no incluye pesos temporales.
+
+### 12.4 DFS: búsqueda en profundidad
+
+**DFS** continúa por un camino hasta no poder profundizar más; luego regresa a explorar alternativas.
+
+Método real: `Grafo.RecorridoDFS(int inicio)`.
+
+En esta implementación es **iterativo** y utiliza `Pila<int>` para guardar los nodos pendientes de visitar. Se marca un arreglo `visitado` para evitar repeticiones.
+
+### 12.5 Detección de ciclos
+
+Métodos: `TieneCiclos()` y `VisitarCiclo(...)`.
+
+En este caso, DFS es **recursivo** y utiliza un arreglo `color`:
+
+- `0`: vértice no visitado.
+- `1`: vértice que se está explorando.
+- `2`: vértice terminado.
+
+Si desde un vértice se encuentra una arista hacia otro con color `1`, existe un **ciclo**. En un trámite, un ciclo modela un posible reproceso por subsanación.
+
+### 12.6 ¿Por qué no basta con una lista doble?
+
+Una lista doble representa el camino principal de una etapa anterior a una siguiente. Un grafo admite **varias salidas posibles desde el mismo vértice**, por ejemplo continuar o devolver una solicitud a una etapa de corrección. Esa ramificación explica por qué el grafo es indispensable para modelar decisiones.
+
+### 12.7 Relación entre grafo y flujo real
+
+El grafo se construye a partir del arreglo de pasos mediante `ConstructorGrafo.Crear`. La opción **8** lo visualiza; además, la operación `Solicitud.Retroceder` consulta las aristas de observación para determinar un destino válido. Por otro lado, `Solicitud.Avanzar` sigue principalmente la **lista doble**. Por tanto, no debe afirmarse que todas las transiciones las gobierna exclusivamente el grafo.
+
+**Cómo defenderlo:** “El grafo representa rutas y devoluciones; con BFS hallo una ruta con menos transiciones, con DFS recorro sus vértices y con detección de ciclos compruebo si una observación permite volver a una etapa anterior”.
+
+---
+
+## 13. Integración entre las estructuras
+
+Las estructuras **no funcionan aisladas**. Una misma acción del usuario puede activar varias:
+
+| Acción | Estructuras que participan | Secuencia concreta |
+|---|---|---|
+| Elegir trámite | Arreglo | Selecciona un `TipoTramite` del catálogo |
+| Registrar solicitud | Memoria dinámica + lista doble + pila | Crea el objeto; inserta pasos y guarda estado inicial |
+| Validar documentos | Arreglo + recursividad + árbol de requisitos | Recorre hojas y compuestos; identifica faltantes |
+| Emitir turno | Cola | Crea un `Turno` y lo encola |
+| Atender | Cola + lista circular + lista doble + pila | Desencola, asigna ventanilla, avanza un paso, registra estado |
+| Observar etapa | Grafo + lista doble + pila | Consulta una arista, mueve cursor y guarda observación |
+| Consultar historial | Pila | Muestra registros desde el tope |
+| Mostrar rutas | Grafo + cola + pila + recursividad | Ejecuta BFS, DFS y detección de ciclos |
+
+### Diagrama integrador
+
+```mermaid
+flowchart TB
+    R["Registro de solicitud"] --> A["Arreglo de trámites"]
+    R --> V["Validación recursiva"]
+    R --> MD["Memoria dinámica"]
+    V -->|"Requisitos completos"| C["Cola FIFO de turnos"]
+    V -->|"Faltantes"| OBS["Documentos pendientes"]
+    OBS --> V
+    C --> LC["Lista circular de ventanillas"]
+    LC --> LD["Lista doble de pasos"]
+    LD --> G["Grafo de transiciones"]
+    G -->|"Observación"| LD
+    LD --> P["Pila de historial"]
+```
+
+---
+
+## 14. Trámites que modela el sistema
+
+El archivo `Servicios/CatalogoDerechosReales.cs` define tres procesos académicos:
+
+| Código | Trámite | Cantidad de pasos | Enfoque para la defensa |
+|---|---|---:|---|
+| **CNP** | Certificado de No Propiedad Urbana | **3** | Caso simple y validación inicial |
+| **COR** | Corrección de Datos en el Folio Real | **4** | Requisitos compuestos y observación |
+| **TRA** | Transferencia de Inmueble e Inscripción de Folio Real | **6** | Grafo más amplio y etapas externas |
+
+### CNP — Trámite corto
+
+1. Presentar solicitud y documentos en ventanilla.
+2. Búsqueda y verificación en el sistema registral.
+3. Emisión y entrega del certificado.
+
+**Qué demuestra:** registro sencillo, cola, avance, historial y ciclo de observación desde el paso de revisión.
+
+### COR — Trámite intermedio
+
+1. Presentar requisitos en Derechos Reales.
+2. Revisión documental.
+3. Subinscripción de la Escritura Pública Unilateral.
+4. Emisión del Folio Real corregido.
+
+**Qué demuestra:** requisitos jerárquicos (minuta y protocolización dentro de un documento compuesto), recursividad y devolución desde revisión.
+
+### TRA — Trámite largo
+
+1. Verificar la titularidad del vendedor.
+2. Pago del Impuesto Municipal a la Transferencia (**gestión municipal externa**).
+3. Protocolización de la minuta ante Notario (**gestión notarial externa**).
+4. Presentar el testimonio en Derechos Reales.
+5. Calificación registral (revisión legal).
+6. Inscripción y entrega del Folio Real al comprador.
+
+**Qué demuestra:** mayor cantidad de nodos, un grafo con más rutas, requisitos compuestos, ciclos y separación de gestiones externas de las registrales.
+
+**Nota:** las duraciones y documentos mostrados en el código son referenciales o responden a fuentes históricas de su catálogo; no deben utilizarse como requisitos oficiales vigentes sin verificación adicional.
+
+---
+
+## 15. Ejemplo completo de ejecución
+
+La siguiente secuencia es **un procedimiento sugerido de prueba manual**, no una transcripción de una ejecución ya verificada. Los mensajes exactos dependen de la versión del código y de los datos introducidos.
+
+### Situación de ejemplo
+
+Un ciudadano ficticio llamado **Juan Pérez**, con CI **0000000**, desea realizar un trámite **CNP**.
+
+**Paso A — Consultar catálogo:**
+
+- Abrir opción `1` para observar los tipos y requisitos.
+- Identificar `CNP` entre los tres trámites.
+
+**Paso B — Registrar solicitud incompleta:**
+
+- Abrir opción `2`.
+- Elegir el trámite `CNP` (primera opción del catálogo).
+- Ingresar nombre ficticio y CI ficticio.
+- Cuando aparezca la selección de documentos, introducir solo `1` para presentar uno de los requisitos.
+- El sistema debe registrar la solicitud y mostrar los documentos pendientes, **sin turno**.
+
+**Paso C — Completar documentos pendientes:**
+
+- Elegir opción `11`.
+- Seleccionar el número de solicitud indicado por el programa.
+- Entregar los requisitos restantes usando los números que aparecen en esa pantalla.
+- Si ya no existen documentos pendientes y corresponde, debe generarse un turno.
+
+**Paso D — Verificar cola:**
+
+- Seleccionar opción `9` y comprobar que existe un turno en espera.
+
+**Paso E — Atender:**
+
+- Seleccionar opción `3`.
+- El sistema debe atender el primer turno, asignar la siguiente ventanilla circular y situar el trámite en el segundo paso.
+
+**Paso F — Consultar seguimiento:**
+
+- Seleccionar opción `6` y la solicitud correspondiente.
+- Revisar las marcas de pasos completados, actuales y pendientes.
+
+**Paso G — Mostrar grafo:**
+
+- Seleccionar opción `8` y elegir un trámite.
+- Observar la lista de adyacencia, la ruta BFS, el recorrido DFS y la existencia de ciclos.
+
+**Paso H — Ver historial:**
+
+- Seleccionar opción `7` y la solicitud correspondiente.
+- Revisar la pila de transiciones desde el evento más reciente.
+- Responder `n` a deshacer si solamente se desea consultar.
+
+### Caso adicional: observar una etapa
+
+En un trámite atendido, ejecutar la opción `5` desde un paso que admita devolución. Escribir un motivo ficticio y confirmar que el cursor se mueve a un destino autorizado por las aristas `observado: subsanar`.
+
+> **Advertencia para las pruebas:** la opción 11 resuelve requisitos faltantes del expediente; no debe asumirse que resuelve automáticamente cualquier observación generada durante la revisión de etapas. La versión actual distingue esos mecanismos y todavía puede mejorarse su integración.
+
+---
+
+## 16. Complejidad computacional
+
+La notación **O(...)** describe cómo crece el trabajo de un algoritmo cuando aumenta la cantidad de elementos.
+
+| Operación o procedimiento | Complejidad típica | Razón |
+|---|---|---|
+| `Pila.Push`, `Pop`, `Peek` | **O(1)** | Cambia o consulta el nodo tope |
+| `Cola.Encolar`, `Desencolar`, `Frente` | **O(1)** | Usa referencias al frente y final |
+| `ListaDoble.MoverSiguiente`, `MoverAnterior` | **O(1)** | Sigue una referencia existente |
+| `ListaDoble.IrA(posicion)` | **O(P)** | Desde el inicio recorre hasta la posición |
+| `ListaCircular.Rotar` | **O(1)** | Avanza la referencia actual |
+| `ValidadorRequisitos.ValidarLista` | **O(R)** en número de nodos de requisitos, más costo de búsquedas de documentos | Recorre la jerarquía; `List.Contains` es lineal |
+| `SistemaTramites.Buscar(id)` | **O(S)** | Busca linealmente entre solicitudes |
+| BFS `RutaMasCorta` | **O(V + E)** | Visita vértices y aristas alcanzables |
+| DFS `RecorridoDFS` | **O(V + E)** | Visita los nodos y sus aristas |
+| `TieneCiclos` | **O(V + E)** | DFS recursivo con estados de visita |
+| `Grafo.AgregarArista` | **O(grado de salida actual)** | Añade la arista al final de una lista enlazada |
+
+**Variables:** `P` = pasos del trámite; `R` = nodos de requisitos; `S` = solicitudes; `V` = vértices; `E` = aristas.
+
+**Observación importante:** aunque la recursividad visita cada requisito una vez, comprobar si un documento fue presentado utiliza `List<string>.Contains`, cuyo costo depende del número de documentos presentados. Por eso el costo real puede ser mayor que O(R) cuando crecen las listas.
+
+---
+
+## 17. Pruebas y evidencias
+
+### 17.1 Pruebas automatizadas existentes
+
+La clase `Interfaz/Pruebas.cs` contiene comprobaciones de:
+
+- Pila: inserción, cima, extracción y LIFO.
+- Cola: encolado, extracción FIFO, vaciado y reutilización.
+- Lista doble: avance, retroceso, límites y posicionamiento.
+- Lista circular: rotación `1 → 2 → 3 → 1`.
+- Catálogo: cantidad de trámites y pasos.
+- Recursividad: verificación de documentos y detección de una hoja faltante.
+- Grafo: cantidad de vértices, ruta BFS, DFS, ciclos y nodo final sin salida.
+- Solicitudes: registro, atención, avance y finalización.
+- Observación y deshacer: devolución y restauración de etapa.
+- Turnos y ventanillas: FIFO y orden circular de asignación.
+
+Ejecutar desde la carpeta que contiene `TramiteAgil.csproj`:
+
+```cmd
+dotnet run -- --test
+```
+
+El programa imprime verificaciones `[OK]` o `[FALLA]` y un resumen. **La presencia de las pruebas en el código no implica que hayan sido ejecutadas en el equipo del estudiante.** El resultado que se publique debe proceder de una ejecución real.
+
+### 17.2 Pruebas manuales necesarias para la versión mejorada
+
+Las pruebas automáticas existentes no cubren de forma exhaustiva las mejoras sobre **requisitos incompletos y opción 11**. Se recomienda comprobar manualmente:
+
+| ID | Prueba | Resultado esperado |
+|---|---|---|
+| PM-01 | Registrar sin documentos | Solicitud observada sin turno |
+| PM-02 | Presentar solo una parte de los documentos faltantes | Sigue con requisitos pendientes |
+| PM-03 | Entregar todos los documentos restantes | Requisitos completos; turno si corresponde |
+| PM-04 | Atender múltiples turnos | Orden FIFO |
+| PM-05 | Atender cuatro turnos | Ventanillas 1, 2, 3, 1 |
+| PM-06 | Avanzar antes de atención | Acción rechazada |
+| PM-07 | Observar desde un paso sin arista de devolución | Acción rechazada |
+| PM-08 | Observar desde revisión con devolución configurada | Regresa al destino permitido |
+| PM-09 | Consultar historial | Última transición aparece arriba |
+| PM-10 | Consultar grafo de TRA | BFS, DFS, aristas y ciclos mostrados |
+
+### 17.3 Evidencias para GitHub
+
+Añadir capturas reales de los siguientes apartados. **No se incluyen imágenes ficticias ni capturas generadas por IA como evidencia**.
+
+| Archivo sugerido | Evidencia |
+|---|---|
+| `docs/capturas/01-menu.png` | Menú principal |
+| `docs/capturas/02-catalogo.png` | Catálogo de tres trámites |
+| `docs/capturas/03-requisitos.png` | Validación recursiva / faltantes |
+| `docs/capturas/04-turnos.png` | Cola y ventanillas |
+| `docs/capturas/05-seguimiento.png` | Lista doble y etapas |
+| `docs/capturas/06-historial.png` | Pila de estados |
+| `docs/capturas/07-grafo.png` | BFS, DFS, ciclos |
+| `docs/capturas/08-pruebas.png` | Resultado real de `--test` |
+
+Después de crearlas y subirlas, se pueden incrustar en este README usando `![Descripción](docs/capturas/01-menu.png)` y las demás rutas correspondientes.
+
+**Datos de prueba:** usar nombres, cédulas y expedientes ficticios; no subir registros reales de terceras personas.
+
+---
+
+## 18. Instalación y ejecución desde CMD
+
+### Requisitos
+
+- Windows con **.NET SDK 8** o compatible con el objetivo del proyecto.
+- Visual Studio, VS Code o un editor de texto para modificar el código.
+- Git opcional para publicar el repositorio.
+
+Comprobar instalación:
 
 ```cmd
 dotnet --version
 ```
 
-### Ejecutar desde CMD
+### Abrir la carpeta correcta
 
-1. Descarga o clona el repositorio.
-2. Abre la carpeta que contiene **`TramiteAgil.csproj`**.
-3. Haz clic en la barra de dirección del Explorador de Windows, escribe `cmd` y presiona Enter.
-4. Ejecuta los siguientes comandos:
+En el Explorador de archivos, ubicar la carpeta que contiene **`TramiteAgil.csproj`**. Hacer clic en la barra de direcciones, escribir `cmd` y presionar Enter. Esto abre la consola en la ubicación correcta.
+
+Alternativamente, utilizar una ruta **real**, encerrada entre comillas cuando tenga espacios:
+
+```cmd
+cd /d "C:\RUTA_REAL\TramiteAgil"
+```
+
+> La ruta anterior es un ejemplo: reemplazar `C:\RUTA_REAL\TramiteAgil` por la ubicación exacta del proyecto. No escribir solamente la ruta como si fuera un comando.
+
+### Compilar y ejecutar
 
 ```cmd
 dotnet build
 dotnet run
 ```
 
-> Si usas `cd` para cambiar de carpeta y la ruta tiene espacios, usa comillas, por ejemplo: `cd /d "C:\RUTA\A\TramiteAgil"`. No basta con escribir la ruta sola en CMD.
-
-### Modos adicionales
+### Probar estructuras y ejecutar demo
 
 ```cmd
-:: Pruebas automáticas
 dotnet run -- --test
-
-:: Demostración automática
 dotnet run -- --demo
 ```
 
-**Nota de validación:** estos comandos están definidos en el código fuente. Al preparar este README no se ejecutó una compilación con el SDK de .NET en el entorno de documentación, por lo que el resultado de las pruebas debe registrarse después de verificarlas en tu computadora.
+**Significado de cada comando:** `build` compila; `run` abre el menú; `--test` ejecuta las comprobaciones programadas; `--demo` ejecuta una secuencia de demostración sin interacción normal del menú.
 
-## 13. Pruebas y validación
+### Errores comunes
 
-### 13.1 Escenarios de prueba manual
+**“No se puede encontrar la ruta especificada”:** comprobar nombre real y ubicación de carpetas; abrir CMD desde el Explorador.
 
-| Caso | Procedimiento | Resultado esperado |
-|---|---|---|
-| **P01** | Registrar una solicitud sin todos los documentos. | Solicitud registrada con pendientes, sin turno. |
-| **P02** | Presentar solo parte de los documentos faltantes. | Persisten los requisitos pendientes durante la misma ejecución. |
-| **P03** | Completar los documentos usando la opción 11. | Se completa la validación y se genera el turno según las reglas del sistema. |
-| **P04** | Generar varios turnos y atenderlos. | Se respeta el orden de llegada FIFO. |
-| **P05** | Atender cuatro solicitudes. | Las ventanillas rotan 1 → 2 → 3 → 1. |
-| **P06** | Consultar el historial. | Los eventos aparecen del más reciente al más antiguo. |
-| **P07** | Avanzar y observar una etapa de revisión. | Solo se permite el retorno configurado en el flujo. |
-| **P08** | Mostrar un grafo. | Se visualizan pasos, aristas y recorridos; se identifican ciclos cuando corresponda. |
-| **P09** | Completar un trámite. | La solicitud alcanza el estado final permitido. |
-| **P10** | Cerrar y reiniciar la aplicación. | Los datos anteriores no se conservan: limitación conocida de la versión. |
+**“dotnet no se reconoce”:** instalar el SDK de .NET y abrir nuevamente CMD.
 
-### 13.2 Pruebas automáticas
-
-La clase `Interfaz/Pruebas.cs` contiene comprobaciones de las estructuras y de los flujos implementados. Se inicia mediante:
-
-```cmd
-dotnet run -- --test
-```
-
-**Estado de evidencia:** [PENDIENTE DE COMPLETAR DESPUÉS DE EJECUTAR EN TU EQUIPO]
-
-| Evidencia | Registrar después de la ejecución |
-|---|---|
-| Resultado de `dotnet build` | [CORRECTO / ERROR] |
-| Resultado de `dotnet run -- --test` | [PRUEBAS APROBADAS / DETALLAR FALLAS] |
-| Fecha de prueba | [DD/MM/AAAA] |
-| Entorno | [VERSIÓN DE WINDOWS / SDK .NET] |
-
-**Capturas sugeridas para GitHub:** `docs/capturas/menu.png`, `docs/capturas/registro.png`, `docs/capturas/grafo.png` y `docs/capturas/pruebas.png`. Inserta las imágenes en este README **solo después de crear esos archivos**, usando rutas relativas válidas.
-
-## 14. Complejidad de las operaciones
-
-| Operación | Complejidad teórica | Observación |
-|---|:---:|---|
-| `Push` / `Pop` en pila | `O(1)` | Acceso a la cima. |
-| Encolar / desencolar | `O(1)` | Referencias al frente y al final. |
-| Avanzar / retroceder cursor doble | `O(1)` | Desde un nodo ya localizado. |
-| Rotación de ventanilla | `O(1)` | Siguiente referencia circular. |
-| BFS / DFS | `O(V + E)` | `V`: vértices; `E`: aristas. |
-| Validar requisitos recursivamente | `O(R)` | `R`: total de requisitos y subrequisitos recorridos. |
-| Buscar una solicitud por ID | `O(S)` | Búsqueda lineal en `S` solicitudes de esta versión. |
-
-Estos valores expresan el análisis de los algoritmos; **no representan métricas medidas de rendimiento** en el sistema de Derechos Reales.
-
-## 15. Aporte social y valor emprendedor
-
-El proyecto se relaciona con el **Objetivo de Desarrollo Sostenible 16**, especialmente con el interés de promover instituciones eficaces, responsables y transparentes.
-
-Su aporte potencial se expresa en tres ideas:
-
-1. **Claridad:** mostrar requisitos, documentos pendientes y etapas de atención.
-2. **Orden:** representar una fila y distribuir turnos de manera comprensible.
-3. **Trazabilidad:** conservar, durante la ejecución, un historial de los cambios en cada solicitud.
-
-Como propuesta de evolución emprendedora, podría desarrollarse un sistema web o de escritorio con almacenamiento seguro, autenticación, control de permisos, accesibilidad y estadísticas. Cualquier implementación en oficinas públicas requeriría autorización institucional, revisión de seguridad, adecuación normativa, protección de datos y pruebas piloto.
-
-## 16. Resultados esperados y mejoras futuras
-
-### Resultados que se busca demostrar
-
-- Uso articulado de las estructuras de datos solicitadas en la asignatura.
-- Una simulación de trámites con pasos, documentos y estados diferenciados.
-- Recorridos de grafos y gestión de retornos por observaciones.
-- Atención de turnos con estructuras implementadas en código.
-- Una base explicable y ampliable para futuros desarrollos.
-
-### Mejoras propuestas
-
-| Prioridad | Mejora | Beneficio previsto |
-|:---:|---|---|
-| Alta | Guardado en JSON o base de datos | Conservar solicitudes al cerrar la aplicación. |
-| Alta | Más pruebas para los nuevos casos de subsanación | Evitar regresiones y verificar escenarios completos. |
-| Alta | Validaciones y restricciones adicionales | Reducir estados inconsistentes en la simulación. |
-| Media | Roles de operador y administrador | Separar permisos y operaciones. |
-| Media | Consulta por número de solicitud | Facilitar el seguimiento. |
-| Media | Reportes de tiempos simulados | Analizar el comportamiento del prototipo sin confundirlo con estadísticas oficiales. |
-| Futura | Interfaz gráfica o aplicación web | Mejorar la experiencia de uso. |
-
-## 17. Conclusiones
-
-1. **Aplicación de conocimientos.** TramiteAgil DDRR demuestra cómo los conceptos de Estructura de Datos pueden aplicarse a un problema de organización documental, turnos y seguimiento.
-2. **Elección de estructuras.** Cada estructura responde a una necesidad distinta: la cola organiza la atención; la pila conserva el historial; la lista doble describe las etapas; la lista circular rota las ventanillas; y el grafo representa decisiones y posibles devoluciones.
-3. **Importancia de los grafos.** Los procesos registrales no son necesariamente lineales. La presencia de observaciones puede generar retornos y ciclos, por lo que un grafo dirigido permite describirlos con mayor precisión que una secuencia única de pasos.
-4. **Comprensión del contexto boliviano.** El trabajo diferencia correctamente las funciones de Derechos Reales de las gestiones municipales y notariales. También reconoce que los requisitos y plazos dependen del servicio específico y que las demoras reales no pueden inferirse a partir de una simulación.
-5. **Alcance del prototipo.** El proyecto constituye una herramienta didáctica y una prueba de concepto, no una plataforma institucional ni una solución cuya eficiencia operativa haya sido validada en campo.
-6. **Proyección futura.** El modelo puede ampliarse con persistencia, seguridad, reportes, interfaces de usuario y pruebas de desempeño para explorar su aplicación en sistemas de atención ciudadana.
-
-En síntesis, **TramiteAgil DDRR integra teoría, programación y contexto social** en un proyecto de consola que hace visibles las decisiones de diseño y el comportamiento de las principales estructuras de datos estudiadas.
-
-## 18. Referencias y fuentes consultadas
-
-Las fuentes siguientes respaldan el **contexto boliviano y los procedimientos mencionados**. No sustituyen una consulta oficial vigente para realizar un trámite real.
-
-**Fuentes institucionales y normativas**
-
-1. [Consejo de la Magistratura — Información de Trámites en Derechos Reales](https://tramitesddrr.organojudicial.gob.bo/).
-2. [Consejo de la Magistratura — Folio Real actualizado](https://cm.organojudicial.gob.bo/consejo/requisitosddrr/42_-folio-real-actualizado.html).
-3. [Consejo de la Magistratura — Certificado de No Propiedad a Nivel Nacional](https://cm.organojudicial.gob.bo/consejo/requisitosddrr/43_-certificado-de-no-propieda.html).
-4. [Decreto Supremo N.º 4273 de 2020 — Procedimiento específico de corrección de datos, art. 9](https://www.prorevi.gob.bo/wp-content/uploads/2020/07/DecretoSupremo4273.pdf).
-5. [Gobierno Autónomo Municipal de La Paz — Registro de transferencias onerosas](https://www.gob.bo/tramites/registro-de-transferencias-onerosas-de-bienes-inmuebles).
-6. [Tribunal Departamental de Justicia de La Paz — Requisitos de inscripción de propiedad](https://lapaz.organojudicial.gob.bo/Documentos/tramites%2020220712135842.pdf).
-
-**Fuentes de contexto y reportes de atención**
-
-7. [El Diario (28/04/2025) — El Folio Real habilita al ciudadano para ejercer su derecho propietario](https://www.eldiario.net/portal/2025/04/28/el-folio-real-habilita-al-ciudadano-para-ejercer-su-derecho-propietario/).
-8. [Correo del Sur (12/02/2025) — La Paz: Consejo despide a funcionaria de DD.RR.](https://correodelsur.com/seguridad/20250212/la-paz-consejo-despide-a-funcionaria-de-dd-rr.html).
-9. [ABI (10/07/2026) — Inspección en dependencias judiciales de La Paz](https://abi.bo/operativo-de-la-magistratura-permitio-inspeccionar-el-tribunal-de-justicia-de-la-paz-y-recibir-denuncias/).
-
-*Fecha de consulta de las fuentes en línea: octubre de 2026.*
-
-[^catalogo-oficial]: Consejo de la Magistratura, *Información de Trámites en Derechos Reales*. https://tramitesddrr.organojudicial.gob.bo/ (consulta: octubre de 2026).
-[^folio]: Consejo de la Magistratura, *Folio Real actualizado: requisitos y plazo publicado*. https://cm.organojudicial.gob.bo/consejo/requisitosddrr/42_-folio-real-actualizado.html (consulta: octubre de 2026).
-[^cnp]: Consejo de la Magistratura, *Certificado de No Propiedad a Nivel Nacional: requisitos y plazo publicado*. https://cm.organojudicial.gob.bo/consejo/requisitosddrr/43_-certificado-de-no-propieda.html (consulta: octubre de 2026).
-[^ds4273]: Estado Plurinacional de Bolivia, *Decreto Supremo N.º 4273, de 26 de junio de 2020*, art. 9 (procedimiento específico de corrección). https://www.prorevi.gob.bo/wp-content/uploads/2020/07/DecretoSupremo4273.pdf (consulta: octubre de 2026).
-[^gam-lp]: Gobierno Autónomo Municipal de La Paz, *Registro de transferencias onerosas de bienes inmuebles*, Portal de Trámites del Estado. https://www.gob.bo/tramites/registro-de-transferencias-onerosas-de-bienes-inmuebles (consulta: octubre de 2026).
-[^inscripcion]: Tribunal Departamental de Justicia de La Paz, *Requisitos Derechos Reales: inscripción de propiedad*, documento institucional. https://lapaz.organojudicial.gob.bo/Documentos/tramites%2020220712135842.pdf (consulta: octubre de 2026).
-[^eldiario]: *El Diario*, 28 de abril de 2025, “El Folio Real habilita al ciudadano para ejercer su derecho propietario”. https://www.eldiario.net/portal/2025/04/28/el-folio-real-habilita-al-ciudadano-para-ejercer-su-derecho-propietario/
-[^correodelsur]: *Correo del Sur*, 12 de febrero de 2025, “La Paz: Consejo despide a funcionaria de DD.RR.” https://correodelsur.com/seguridad/20250212/la-paz-consejo-despide-a-funcionaria-de-dd-rr.html
-[^abi2026]: Agencia Boliviana de Información, 10 de julio de 2026, “Operativo de la Magistratura permitió inspeccionar el Tribunal de Justicia de La Paz y recibir denuncias”. https://abi.bo/operativo-de-la-magistratura-permitio-inspeccionar-el-tribunal-de-justicia-de-la-paz-y-recibir-denuncias/
-
-**Documentación del proyecto utilizada como base:** `INFORME_TECNICO.md` proporcionado para la redacción del presente README y los archivos fuente de `TramiteAgil_DDRR_Mejorado.zip`. La descripción funcional se ajustó a ese código; los contextos jurídicos y periodísticos se distinguen de la simulación.
-
-## 19. Autoría y créditos
-
-**Desarrollado por:** [NOMBRE COMPLETO DEL ESTUDIANTE]  
-**Carrera:** [CARRERA]  
-**Institución:** Universidad Privada Domingo Savio — La Paz  
-**Asignatura:** Estructura de Datos  
-**Docente:** Msc. Lic. Andrés Albino  
-**Gestión:** [GESTIÓN ACADÉMICA]
-
-**Video del proyecto:** [ENLACE PENDIENTE]  
-**Repositorio:** [ENLACE PENDIENTE]
+**“No se encontró un proyecto para ejecutar”:** entrar a la carpeta donde está `TramiteAgil.csproj` o indicar el proyecto explícitamente.
 
 ---
 
-<p align="center"><strong>TRAMITEAGIL DDRR</strong><br>
-<em>Una simulación académica para comprender el valor de las estructuras de datos en la gestión de trámites registrales.</em></p>
+## 19. Aporte a la asignatura y defensa oral
+
+### Qué se desarrolló en cada criterio
+
+**CV1 (25 %).** Se implementaron los arreglos del catálogo, la creación dinámica de objetos y nodos, la validación recursiva de requisitos, una pila enlazada para historial y una cola enlazada para turnos.
+
+**CV2 (35 %).** Se implementó una lista doble con cursor para los pasos de cada solicitud y una lista circular para la asignación rotativa de tres ventanillas.
+
+**CV3 (40 %).** Se construyó un grafo dirigido de pasos y devoluciones, representado con listas de adyacencia enlazadas; se añadieron BFS, DFS y detección de ciclos.
+
+### Guion breve para explicar el código
+
+> “El proyecto se inicia en `Program.cs`. `Menu.cs` recibe los datos del usuario y `SistemaTramites.cs` coordina las solicitudes y turnos. Los tipos de trámite se almacenan en un arreglo. Para cada solicitud se crean objetos en memoria y una lista doble de etapas. Los requisitos se validan recursivamente; si están completos, el turno entra en una cola FIFO. Cuando se atiende, una lista circular decide la siguiente ventanilla. El avance se registra en una pila LIFO y el grafo representa las conexiones entre etapas, incluidas las devoluciones. Para estudiar el grafo implementé BFS, DFS y detección de ciclos.”
+
+### Preguntas y respuestas para la defensa
+
+| Pregunta del docente | Respuesta sugerida |
+|---|---|
+| ¿Por qué usar cola para los turnos? | Porque FIFO respeta el orden de llegada. |
+| ¿Qué diferencia hay entre pila y cola? | La pila retira el último; la cola retira el primero. |
+| ¿Por qué lista doble y no simple? | Porque las etapas necesitan navegación en ambos sentidos. |
+| ¿Por qué la lista de ventanillas es circular? | Porque el último nodo conecta con el primero y permite rotación constante. |
+| ¿Cuál es el caso base de tu recursividad? | Llegar a un requisito hoja o al final del arreglo de requisitos. |
+| ¿Para qué sirve BFS? | Para encontrar una ruta con menos transiciones en un grafo sin pesos. |
+| ¿Para qué sirve DFS? | Para explorar vértices en profundidad. |
+| ¿Qué representa un ciclo? | Una ruta de regreso por observaciones o reprocesos. |
+| ¿Utilizaste árboles? | Existe una jerarquía tipo árbol de requisitos; no un AVL ni un árbol binario de búsqueda. |
+| ¿Qué diferencia hay entre lista doble y grafo? | La lista establece la secuencia principal; el grafo admite ramificaciones. |
+| ¿Se puede cerrar y reabrir conservando datos? | No; esta versión no tiene persistencia en disco. |
+
+### Sugerencia de defensa de cinco minutos
+
+| Tiempo | Demostración o explicación |
+|---|---|
+| 0:00–0:30 | Problema, alcance académico y objetivo |
+| 0:30–1:00 | Arquitectura y tipos de trámite |
+| 1:00–2:30 | Registrar solicitud, documentos, turno y atención |
+| 2:30–3:30 | Seguimiento, lista doble, historial y observación |
+| 3:30–4:30 | Grafo, BFS, DFS, ciclos y ubicación de clases |
+| 4:30–5:00 | Aporte emprendedor, límites y conclusión |
+
+---
+
+## 20. Alcance, limitaciones y mejoras futuras
+
+### Funciones implementadas en el código revisado
+
+- Catálogo predefinido de tres trámites académicos.
+- Entrada de datos desde el teclado.
+- Solicitudes, registro de documentos y detección de requisitos faltantes.
+- Subsanación documental con la opción 11.
+- Turnos FIFO y atención rotativa entre tres ventanillas.
+- Etapas navegables por lista doble.
+- Historial LIFO y deshacer limitado.
+- Grafos con BFS, DFS y detección de ciclos.
+- Modos `--test` y `--demo`.
+
+### Limitaciones que deben explicarse con transparencia
+
+1. **No guarda datos de forma permanente:** al cerrar la aplicación, las solicitudes, turnos e historiales en memoria no se conservan.
+2. **No existe conexión oficial** con registros, pagos, notarías ni oficinas de Derechos Reales.
+3. **No existe autenticación ni roles** de ciudadano, registrador y administrador.
+4. **El catálogo es fijo:** no existe una pantalla para crear trámites nuevos.
+5. **La rotación circular no mide disponibilidad** ni tiempos reales de ventanillas.
+6. **La subsanación documental y la observación de etapas no tienen una resolución completamente unificada.**
+7. **La devolución con múltiples destinos** utiliza el primer enlace de observación encontrado; no permite aún elegir entre rutas.
+8. **Las pruebas automáticas no cubren todos los casos nuevos** de documentación incompleta, aunque pueden ejecutarse manualmente.
+9. **Los tiempos de los trámites son referenciales y no prueban demoras reales** de ninguna institución.
+
+### Propuestas de mejora
+
+- Guardar solicitudes y turnos en JSON o una base de datos.
+- Añadir usuarios, permisos y auditoría.
+- Incorporar un módulo para agregar y actualizar trámites.
+- Unificar la subsanación de requisitos y las observaciones de revisión.
+- Permitir seleccionar una arista válida cuando existan varias devoluciones posibles.
+- Agregar pruebas específicas para la opción 11 y todos los cambios de estado.
+- Incorporar tiempos estimados basados en **datos reales y verificables**, no inventados.
+- Adaptar en el futuro el prototipo a una aplicación web o móvil, sin presentar estas funciones como ya desarrolladas.
+
+---
+
+## 21. Conclusiones
+
+**Primera.** TramiteAgil DDRR permitió trasladar conceptos abstractos de Estructura de Datos a un caso concreto de atención y seguimiento de solicitudes. El problema se dividió en operaciones diferentes para seleccionar estructuras apropiadas.
+
+**Segunda.** La cola y la pila muestran la importancia del orden de acceso: FIFO para la atención de ciudadanos y LIFO para consultar las últimas transiciones del historial. La implementación enlazada permitió estudiar cómo se administran referencias a nodos sin depender exclusivamente de colecciones predefinidas.
+
+**Tercera.** La lista doblemente enlazada y la lista circular representan problemas distintos. La primera administra el movimiento por pasos consecutivos; la segunda permite distribuir ventanillas de manera cíclica.
+
+**Cuarta.** El grafo dirigido incorpora el modelado de rutas alternativas, búsquedas BFS y DFS y detección de ciclos, siendo la principal evidencia del criterio CV3. El grafo complementa la lista doble, pero no sustituye todo el control de estados.
+
+**Quinta.** La recursividad facilita validar requisitos jerárquicos. Esta aplicación también ayuda a comprender que un árbol de requisitos no es lo mismo que un árbol de búsqueda AVL.
+
+**Sexta.** El resultado es una **simulación académica explicable, demostrable desde consola y susceptible de ampliación**, no un sistema institucional en producción. Las futuras mejoras más importantes son la persistencia, las pruebas de casos excepcionales y la integración completa de las decisiones del grafo con el flujo de solicitudes.
+
+---
+
+## 22. Referencias y créditos
+
+### Materiales académicos del proyecto
+
+- **Proyecto Final Integrador 4 — TramiteAgil:** consigna de Estructura de Datos, CV1 (25 %), CV2 (35 %) y CV3 (40 %).
+- Código fuente de la versión **`TramiteAgil_DDRR_Mejorado.zip`**: clases de `Estructuras`, `Modelos`, `Servicios` e `Interfaz`.
+- `MEJORAS_Y_PRUEBAS.md` incluido en el proyecto: descripción de cambios, comandos y pruebas manuales recomendadas.
+
+### Fuentes técnicas para profundizar
+
+- [Microsoft Learn — C#](https://learn.microsoft.com/es-es/dotnet/csharp/)
+- [Microsoft Learn — .NET CLI](https://learn.microsoft.com/es-es/dotnet/core/tools/)
+- [GitHub Docs — Sintaxis Markdown](https://docs.github.com/es/get-started/writing-on-github)
+
+### Autoría
+
+**Desarrollado por:** [Nombre del estudiante]
+
+**Asignatura:** Estructura de Datos · Universidad Privada Domingo Savio · La Paz, Bolivia.
+
+**Repositorio GitHub:** [Pegar enlace]
+
+**Video de demostración:** [Pegar enlace]
+
+---
+
+<div align="center">
+
+### TRAMITEAGIL DDRR
+
+**Gestión, estructura y seguimiento en cada trámite.**
+
+*Proyecto académico de consola · No es un servicio oficial de Derechos Reales.*
+
+</div>
