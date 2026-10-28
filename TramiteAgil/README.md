@@ -9,7 +9,8 @@
 
 > Documentación académica del desarrollo, las estructuras de datos y los algoritmos aplicados.
 
-|:---|:---|
+|  | Datos de la asignatura |
+|---|---|
 | Universidad | Universidad Privada Domingo Savio — Sede La Paz |
 | Carrera | **INGENIERIA EN SISTEMAS** |
 | Asignatura | Estructura de Datos |
